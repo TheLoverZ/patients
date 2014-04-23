@@ -1,0 +1,31 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= t("medical_number") %></th>      
+      <th><%= t("full_name") %></th>
+      <th><%= t("ages") %></th>
+      <th><%= t("gender", :scope => :gender) %></th>
+      <th><%= t("status", :scope => :status) %></th>
+      <th><%= t("location", :scope => :location) %></th>
+      <th><%= t("view_count") %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.medical_number %></td>        
+        <td><%= patient.full_name %></td>
+        <td><%= patient.ages %></td>
+        <td><%= t(patient.gender, :scope => :gender) %></td>
+        <td><%= t(patient.status, :scope => :status) %></td>
+        <td><%= link_to patient.location.name, location_path(patient.location) %></td>
+        <td><%= patient.view_count %></td>
+        <td><%= link_to t("show"), patient %></td>
+        <td><%= link_to t("edit"), edit_patient_path(patient) %></td>
+        <td><%= link_to t("destroy"), patient, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

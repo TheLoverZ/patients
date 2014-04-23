@@ -1,0 +1,48 @@
+zh-CN:
+  date:
+    order:
+      - :year
+      - :month
+      - :day
+  first_name: "名字"
+  last_name: "姓氏"
+  middle_name: "中名"
+  full_name: "全名"
+  birthday: "生日"
+  ages: "年龄"
+  gender: 
+    gender: "性别"
+    not_available: "未提供"
+    male: "男性"
+    female: "女性"
+  status:
+    status: "状态"
+    initial: "初始"
+    referred: "已提交"
+    treatment: "治疗中"
+    closed: "已关闭"  
+  view_count: "查看次数"
+  medical_number: "医保卡号"
+  edit: "编辑"
+  back: "后退"
+  show: "查看"
+  destroy: "删除"
+  new_patient: "添加"
+  list_patients: "所有病人"
+  edit_patient: "编辑病人状态"
+  patient:
+    first_name: "名字"
+    birthday: "生日"
+    new_patient: "创建新病例"
+  create_ok: "创建成功"
+  update_ok: "更新成功"
+  location:
+    code: "编号"
+    name: "地名"
+    location: "地点"
+    all_patients: "当前地点所有病人"
+    edit_location: "编辑地点"
+    list_locations: "列出所有地点"
+    new_location: "创建新的地点"
+
+

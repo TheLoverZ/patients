@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t("first_name") %></strong>
+  <%= @patient.first_name %>
+</p>
+
+<p>
+  <strong><%= t("middle_name") %></strong>
+  <%= @patient.middle_name %>
+</p>
+
+<p>
+  <strong><%= t("last_name") %></strong>
+  <%= @patient.last_name %>
+</p>
+
+<p>
+  <strong><%= t("birthday") %></strong>
+  <%= @patient.birthday %>
+</p>
+
+<p>
+  <strong><%= t("medical_number") %></strong>
+  <%= @patient.medical_number %>
+</p>
+
+<p>
+  <strong><%= t("gender", :scope => :gender) %></strong>
+  <%= t(@patient.gender, :scope => :gender) %>
+</p>
+
+<p>
+  <strong><%= t("status", :scope => :status) %></strong>
+  <%= t(@patient.status, :scope => :status) %>
+</p>
+
+<p>
+  <strong><%= t("location", :scope => :location) %></strong>
+  <%= link_to @patient.location.name, location_path(@patient.location) %>
+</p>
+
+<p>
+  <strong><%= t("view_count") %></strong>
+  <%= @patient.view_count %>
+</p>
+
+<%= link_to t("edit"), edit_patient_path(@patient) %> |
+<%= link_to t("back"), patients_path %>

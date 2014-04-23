@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('code', :scope => :location) %></strong>
+  <%= @location.code %>
+</p>
+
+<p>
+  <strong><%= t('name', :scope => :location) %></strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong><%= t('all_patients', :scope => :location) %></strong>
+  <div><%= render file: "layouts/_patient_information.html.erb" %></div>
+  
+</p>
+
+<%= link_to t('edit'), edit_location_path(@location) %> |
+<%= link_to t('back'), locations_path %>

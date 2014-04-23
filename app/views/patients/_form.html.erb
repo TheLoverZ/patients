@@ -1,0 +1,54 @@
+<%= form_for(@patient) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label t("first_name") %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label t("middle_name") %><br>
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label t("last_name") %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label t("birthday") %><br>
+    <%= date_select :patient, :birthday, :start_year => 1900 %>
+  </div>
+  <div class="field">
+    <%= f.label t("gender", :scope => :gender) %><br>
+    <%= radio_button_tag("patient[gender]", "not_available") %>
+    <%= label_tag(:not_available, t("not_available", :scope => :gender)) %>
+    <%= radio_button_tag("patient[gender]", "male") %>
+    <%= label_tag(:male, t("male", :scope => :gender)) %>
+    <%= radio_button_tag("patient[gender]", "female") %>
+    <%= label_tag(:female, t("female", :scope => :gender)) %>    
+  </div>
+  <div class="field">
+    <%= f.label t("status", :scope => :status) %><br>
+    <%= select_tag('patient[status]', options_for_select(
+      [[t("initial", :scope => :status), 'initial'],
+      [t("referred", :scope => :status), 'referred'],
+      [t("treatment", :scope => :status), 'treatment'],
+      [t("closed", :scope => :status), 'closed']]))%>
+  </div>
+  <div class="field">
+    <%= f.label t("location", :scope => :location) %><br>
+    <%= select_tag('patient[location_id]', options_for_select(all_locations_for_select_tag)) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
