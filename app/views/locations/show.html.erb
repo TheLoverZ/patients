@@ -12,7 +12,7 @@
 
 <p>
   <strong><%= t('all_patients', :scope => :location) %></strong>
-  <div><%= render file: "layouts/_patient_information.html.erb" %></div>
+  <div><%= render file: "layouts/_patient_information.html.erb", :locals => { :patients => @patients } %></div>
 
 </p>
 

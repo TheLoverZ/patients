@@ -1,6 +1,6 @@
 <h1><%= t("list_patients") %></h1>
 
-<%= render file: "layouts/_patient_information.html.erb" %>
+<%= render file: "layouts/_patient_information.html.erb", :locals => { :patients => @patients } %>
 
 <br>
 
