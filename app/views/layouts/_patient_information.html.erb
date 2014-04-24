@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th><%= t("medical_number") %></th>      
+      <th><%= t("medical_number") %></th>
       <th><%= t("full_name") %></th>
       <th><%= t("ages") %></th>
       <th><%= t("gender", :scope => :gender) %></th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
-        <td><%= patient.medical_number %></td>        
+        <td><%= patient.medical_number %></td>
         <td><%= patient.full_name %></td>
         <td><%= patient.ages %></td>
         <td><%= t(patient.gender, :scope => :gender) %></td>
