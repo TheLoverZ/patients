@@ -38,11 +38,7 @@
   </div>
   <div class="field">
     <%= f.label t("status", :scope => :status) %><br>
-    <%= select_tag('patient[status]', options_for_select(
-      [[t("initial", :scope => :status), 'initial'],
-      [t("referred", :scope => :status), 'referred'],
-      [t("treatment", :scope => :status), 'treatment'],
-      [t("closed", :scope => :status), 'closed']]))%>
+    <%= select_tag('patient[status]', options_for_select(patient_statuses))%>
   </div>
   <div class="field">
     <%= f.label t("location", :scope => :location) %><br>
