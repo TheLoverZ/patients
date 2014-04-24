@@ -1,5 +1,5 @@
 <h1><%= t('new_patient', :scope => :patient) %></h1>
 
-<%= render 'form' %>
+<%= render 'form', :patient => @patient %>
 
 <%= link_to 'Back', patients_path %>

@@ -1,6 +1,6 @@
 <h1><%= t("edit_patient") %></h1>
 
-<%= render 'form' %>
+<%= render 'form', :patient => @patient %>
 
 <%= link_to t("show"), @patient %> |
 <%= link_to t("back"), patients_path %>
