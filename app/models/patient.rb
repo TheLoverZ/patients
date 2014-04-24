@@ -16,6 +16,8 @@ class Patient < ActiveRecord::Base
   validates :status, inclusion: { in: %w(initial referred treatment closed) }
   validates :gender, inclusion: { in: %w(not_available male female) }
 
+  delegate :name, :to => :location, :prefix => true
+
   before_create do
     self.view_count ||= 0
     self.deleted ||= false

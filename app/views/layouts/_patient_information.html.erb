@@ -20,7 +20,7 @@
         <td><%= patient.ages %></td>
         <td><%= t(patient.gender, :scope => :gender) %></td>
         <td><%= t(patient.status, :scope => :status) %></td>
-        <td><%= link_to patient.location.name, location_path(patient.location) %></td>
+        <td><%= link_to patient.location_name, location_path(patient.location) %></td>
         <td><%= patient.view_count %></td>
         <td><%= link_to t("show"), patient %></td>
         <td><%= link_to t("edit"), edit_patient_path(patient) %></td>
